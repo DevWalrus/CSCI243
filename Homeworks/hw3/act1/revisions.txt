@@ -1,0 +1,21 @@
+commit 9a66d49aab5e5c89db622a3c8646753b4cecd8d1
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Sep 15 09:16:04 2021 -0400
+
+    fix 1: stopped junk characters from being output by changing the comparing of the index to the value to
+    an assignment of the value to the index
+
+commit 367beb2def60ec56a52ea04045d185bef724bb20
+Author: Clinten M Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Sep 15 08:59:22 2021 -0400
+
+    fix 1: stopped crashed caused by a segmentation fault when the printf function
+    would expect to see a string literal but instead got a char. The fix for this
+    was to remove the %s and replace it with a %c. not the printf is expecting a
+    char, which is what we provide.
+
+commit 125a8d5481c5457380552f32b7455222d4672797
+Author: Clinten M Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Sep 15 07:41:51 2021 -0400
+
+    Starter Code for the homework 3 submission

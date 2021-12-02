@@ -1,0 +1,29 @@
+commit e56adbf0fa534ef0f949b0c7279437b31f69b2d0
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Sep 30 20:51:00 2021 -0400
+
+    Fixed all the memory leak issues and finished answering the questions.txt file
+
+commit ab716f21092b5e38854907ced63a3520f21f5cfb
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Sep 30 20:44:15 2021 -0400
+
+    Fixed the Memory leak caused my not free-ing the movie object as a whole
+
+commit de76696eed4f09e15fa0fb2886479ac5afbb421c
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Sep 30 18:00:11 2021 -0400
+
+    Fixed all Invalid Read/Write issues
+
+commit f25611fa00b1ac9ca2df9ae1f25705de5622fff7
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Sep 30 17:41:47 2021 -0400
+
+    Fixed movie_copy errors
+
+commit 1e4bb5aae45c75684ae20630cee0e19aaae328bc
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Sep 30 17:27:30 2021 -0400
+
+    Added Initial Comit with the inital questions (data gathering) answered

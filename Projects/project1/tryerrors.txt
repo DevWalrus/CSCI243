@@ -1,0 +1,35 @@
+Copying files...done
+Initializing - please wait...
+ON-TIME submission of project1-1
+Compiling your submission....
+gcc -ggdb -std=c99 -Wall -Wextra -pedantic -Werror -DDEBUG  -c amici.c
+gcc -ggdb -std=c99 -Wall -Wextra -pedantic -Werror -DDEBUG  -c errors.c
+gcc -ggdb -std=c99 -Wall -Wextra -pedantic -Werror -DDEBUG  -c person.c
+gcc -ggdb -std=c99 -Wall -Wextra -pedantic -Werror -DDEBUG  -c process.c
+gcc -ggdb -std=c99 -Wall -Wextra -pedantic -Werror -DDEBUG -o amici amici.o errors.o person.o process.o  -L/home/course/csci243/pub/projects/01 -ltable -lm 
+
+Test 2: amici  < input.2
+Still testing...    Thu Oct  7 23:57:04 EDT 2021 
+
+Test 6: amici  < input.6
+Still testing...    Thu Oct  7 23:57:04 EDT 2021 
+
+Test 8: amici  < input.8
+
+Test 9: amici  < input.9
+Still testing...    Thu Oct  7 23:57:04 EDT 2021 
+
+Test 12: amici  < input.12
+Still testing...    Thu Oct  7 23:57:05 EDT 2021 
+Still testing...    Thu Oct  7 23:57:05 EDT 2021 
+Still testing...    Thu Oct  7 23:57:06 EDT 2021 
+
+Test 25: amici  < input.25
+
+Creating submission archive - please wait....
+Files being saved:
+amici.c errors.c errors.h person.c person.h process.c process.h revisions.txt
+
+
+Submission dated 2021/10/07 23:57:02 has been completed
+Your files: amici.c revisions.txt person.c person.h process.c process.h errors.c errors.h 

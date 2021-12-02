@@ -1,0 +1,47 @@
+commit fbe9d155ff8f4a5bb088cd9ef840c7358899102c
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Fri Nov 19 21:37:27 2021 -0500
+
+    made a method private that was originally public
+
+commit 65f4f440df02faf6495cb9ff8403eae8278e8410
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Fri Nov 19 21:34:23 2021 -0500
+
+    added documentation and made the encode and decode files one file called my_utils
+
+commit 552c5d7846982fa79dee26b2e3f9806d0a9003a9
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Fri Nov 19 20:34:04 2021 -0500
+
+    Added some tests and fixed the stack smashing error
+
+commit dfaeefa5ac84ab958f7102b8f3d0b733cf4764a7
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Nov 18 23:57:18 2021 -0500
+
+    Added decoding
+
+commit 5deb57ee7a224680bb319fb584d214596614d731
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Nov 18 23:04:22 2021 -0500
+
+    finished encoding
+
+commit 5d097bd6e0cd539cd9baff0f63b53f25731223f3
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Nov 18 13:05:38 2021 -0500
+
+    Finally got the lookup table completed
+
+commit 1328a995f6e4257c97a85a3458d942b559620143
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Tue Nov 16 17:03:15 2021 -0500
+
+    Stubbed out the encode and decode files
+
+commit d8508e03044291b531ccb672e5df4d33f7fc4738
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Fri Nov 12 11:30:23 2021 -0500
+
+    initial commit

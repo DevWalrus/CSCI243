@@ -1,0 +1,322 @@
+Homework 4, Activity 1:  Learning to use Valgrind
+
+*********************************************************************
+Name: Clinten Hopkins
+*********************************************************************
+
+Instructions
+------------
+
+These questions deal with the program found in movie.c, mtime.c and
+movietest.c.  A compiled binary of the solution "goodmovietest" is supplied;
+run this solution to see how the program should behave.
+
+Each numbered section, 1, 2, ..., is a step on the path to a solution.
+Each section has questions, a., b., ..., to answer in sequence.
+
+Answering these questions will require switching between running
+gdb, running valgrind, and examining code. It will be helpful to
+have a second shell window open; run valgrind in the first window, and
+execute other commands (such as "more" or an editor) in a second window.
+
+========================================================================
+   Do not change the code until this text says to do so.  Otherwise,
+   changes may make it difficult/impossible to answer the questions.
+========================================================================
+
+Questions
+---------
+
+1. Run "movietest" without gdb or valgrind and observe its behavior.
+
+a. When movietest runs, what error(s) are reported? Is this repeatable?
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    We get a double free error whenever we run the compiled code. It is
+    repeatable by just running movietest.
+
+b. What does "double free" mean and why is it a problem? Explain IN ENGLISH.
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    Double free basically means the data we are trying to release has 
+    already been released, so the free will actually mess with the memory 
+    manager's structure and cause things to happen, basically corrupting it.
+    This can lead to things like users being able to enter their own data to
+    those corrupt sections and everything can go really awry.
+
+2. Run "movietest" in gdb to investigate.
+
+a. What does the gdb "backtrace" command tell you? Explain IN ENGLISH.
+
+      Study the stack frames of the backtrace.
+      Copy and paste the last two frames of the backtrace below:
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    
+    #5  0x00005555555557b9 in movie_delete (m=0x555555559760) at movie.c:53
+    #6  0x0000555555555685 in main () at movietest.c:109
+    
+    The frames tell me that there is something being free-d twice in either
+    the main method or in the movie-delete method.
+
+b. What statement in movie.c was executing when the error occurred?
+
+      The gdb "frame N" command can change the stack frame context.
+      Copy and paste the line number and statement below:
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    
+    53	    free(m->director) ;
+
+c. What statement in movietest.c was executing when the error occurred?
+
+      Copy and paste the line number and statement below.
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+
+    108	    movie_delete( movie1 ) ;
+
+d. What do gdb "list" and "print" tell you? Explain IN ENGLISH.
+
+      Use the "frame" command to select the stack frame for movie.c,
+      and use the "list" command to view the code near the error site.
+      In gdb, print a pointee value like this: print *m
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+
+    The list and print commands tell me that the issue is probably happening
+    in main, the movie_delete seems to just be deleting the values one by 
+    one and not trying to delete more than it should. The main method seems 
+    to be trying to delete movie_1 after it has already been deleted but 
+    before it has be redefined.
+
+3. Run valgrind to get output and learn error types. (See writeup examples.)
+
+   Study the valgrind output organization and its "SUMMARY" parts.
+   Valgrind reports errors as they occur to standard error.
+   Each error occurrence has an information section with details for analysis.
+   "HEAP SUMMARY" lists usage of dynamically allocated memory blocks.
+   "LEAK SUMMARY" lists leaks: allocated blocks not freed at termination.
+   Each leak has a "loss record" with details on the memory origin.
+   "ERROR SUMMARY" lists total errors and the number of error "contexts".
+
+a. In "LEAK SUMMARY", how many bytes are reported as "definitely lost"?
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    definitely lost: 380 bytes
+
+b. In "HEAP SUMMARY", how many bytes were in use when the program terminated?
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    in use at exit: 380 bytes
+
+c. In "HEAP SUMMARY", how many allocation/deallocation calls were made?
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    total heap usage: 60 allocs, 53 frees, so a total of 113
+
+d. What types of errors did valgrind report? List by name and describe.
+
+      Each error report uses a telltale phrase to identify it, and
+      each occurrence lists location and memory information.
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    Conditional jump or move depends on uninitialised value(s)
+        We are trying to read (in a conditional) a node without initalizing
+        it, basically we just need to set all of our malloc defined nodes to
+        be something even if it is just NULL
+    Invalid read of size X
+        We are trying to read something at a point that we do not have 
+        access to. This could mean the data is no longer managed my malloc, 
+        was recently free'd, or we could just be reading past the 
+        pre-defined amount of memory we gavethe variable
+    Invalid write of size X 
+        We are trying to write something at a point that we do not have 
+        access to. This probably means we are trying to write past the 
+        pre-defined amount of memory when we gave the variable. 
+
+4. Run valgrind to detect and fix "Invalid" access errors.
+
+      Valgrind output may list multiple types of errors, and valgrind will
+      report the same error whenever statements execute which cause the error.
+
+a. In which FUNCTIONS did valgrind detect "Invalid" access errors? List them.
+
+      Information in the "at ..." line identifies the detection point, and
+      information in the first "by ..." line identifies the calling function.
+      Each reported error includes the function, file name and line number
+      at which valgrind detected the invalid access error.
+
+      Enter the information of each unique "by" line for this answer.
+      There are multiple functions for this answer.
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+
+    movie_copy()
+    by 0x10994D: movie_copy (movie.c:104)
+    by 0x10997D: movie_copy (movie.c:107)
+
+    movie_get_title()
+    by 0x10985B: movie_get_title (movie.c:73)
+    by 0x109882: movie_get_title (movie.c:74)
+
+    movie_get_director()
+    by 0x109807: movie_get_director (movie.c:63)
+    by 0x10982D: movie_get_director (movie.c:64)
+
+    movie_equals
+    by 0x1096BA: movie_equals (movie.c:23)
+    by 0x1096D9: movie_equals (movie.c:24)
+
+
+
+b. Which statements are the origin of these memory allocations?
+
+      Each error has an "Address" section that reports where the code
+      allocated the memory whose access was faulty.
+
+      Use the information in the first "by..." line under the "Address" to
+      get the statements, and enter the statements below for the answer.
+      There are multiple statements for this answer.
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+
+    movie_delete()
+    by 0x1097C8: movie_delete (movie.c:55)
+
+    movie_copy()
+    by 0x10992A: movie_copy (movie.c:103)
+    by 0x109957: movie_copy (movie.c:106)
+
+c. What is the root cause of the invalid access errors? Explain IN ENGLISH.
+
+      Identifying root causes of invalid accesses requires some analysis.
+      Review the file "movie.h" to understand the movie structure and
+      identify its memory requirements.
+      Also examine the code around the offending lines.
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    movie_delete:
+        It seems the position we are writing to has already been freed which
+        means there is no allocated position to write to at that pointer.
+    movie_copy:
+        It seems the pointer is just missing an overflow byte for the needed
+        Null character at the end of a string
+    
+========================================================================
+=> Given the knowledge gained, do this to fix invalid accesses:
+   - edit the code to correct the errors;
+   - rebuild;
+   - retest the program with valgrind;
+   - add and commit to version control; and
+   - loop until no invalid memory access errors are present.
+========================================================================
+
+
+5. Run valgrind to study and fix "Invalid free()..." and "Conditional...".
+
+a. What function produces invalid free errors? How many times is it called?
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    movie_delete is called 6 times in movietest.c
+
+b. How many times is free() called from inside that function?
+
+      Include ONLY free() calls from inside the function answered above.
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    free() is called twice directly in movie_delete
+
+c. What change is needed to eliminate the "Invalid free" errors?
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    Remove one of the movie_delete calls so that the free is not being
+    called on something that has already been free'd
+
+d. What is the root cause of "Conditional..." errors? What change is needed?
+
+      Use valgrind output to identify what needs initialization and locate
+      the place to add it. hint: one line of code fixes all of this error.
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    We needed to initlize last_played to be NULL
+
+========================================================================
+=> Given the knowledge gained, do this to fix invalid frees and conditionals:
+   - implement the changes to correct the errors;
+   - rebuild;
+   - retest the program with valgrind;
+   - add and commit to version control; and
+   - loop until no "Invalid free..." and no "Conditional" errors exist.
+
+   At this point, the program should produce only memory leak errors.
+========================================================================
+
+
+6. Run valgrind to eliminate lost the blocks of memory in "HEAP SUMMARY".
+
+a. Which functions called malloc() that resulted in later memory leaks?
+
+      List the function, file, and line number for each function that
+      allocates memory that leads to a later memory leak.
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    movie.c:
+        (movie_new:38)          m = malloc(sizeof(Movie)) ;
+        (movie_copy:103)        d = malloc(sizeof(Movie)) ;
+        (movie_to_string:150)   sstr = malloc( len ) ;
+
+b. What changes are needed to correct each leak problem? Explain IN ENGLISH.
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    movie_new and movie_copy:
+        We just need to free the movie object itself after use. We currently
+        free the individual attributes of the struct but not the object itself.
+    movie_to_string:
+        We need to make sure to free the output of this function after each
+        call itself, not just at the end of the main method.
+
+c. Where is the logical place to deallocate leaked memory? Explain IN ENGLISH.
+
+    :  4 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    
+    movie_new and movie_copy:
+        We would just need to free the movie object passed into movie_delete
+    movie_to_string:
+        Because the same variable is used in the main method of testmovie.c
+        we would need to free that variable right after the string is used,
+        but before the next call to movie_to_string happens.
+
+========================================================================
+=> Make the necessary changes to the code to correct the leaks.
+=> Finally do this to fix memory leaks:
+   - implement the changes to correct the errors;
+   - rebuild;
+   - retest the program with valgrind;
+   - add and commit to version control; and
+   - loop until valgrind output reports no errors and no leaks.
+
+   At this point, the program should run successfully to completion, and
+   there should be no memory management errors detected by valgrind.
+========================================================================
+

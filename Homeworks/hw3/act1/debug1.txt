@@ -1,0 +1,61 @@
+cmh3586@glados:~/Courses/CS-243/Homeworks/hw3/act1$ gdb -q good-life
+Reading symbols from good-life...
+(gdb) run 123
+Starting program: /home/stu4/s14/cmh3586/Courses/CS-243/Homeworks/hw3/act1/good-life 123
+
+        ..Welcome to the Game of life..
+
+Please enter the initial number of organisms: 123
+
+Program received signal SIGSEGV, Segmentation fault.
+__strlen_avx2 () at ../sysdeps/x86_64/multiarch/strlen-avx2.S:65
+65      ../sysdeps/x86_64/multiarch/strlen-avx2.S: No such file or directory.
+(gdb) where
+#0  __strlen_avx2 () at ../sysdeps/x86_64/multiarch/strlen-avx2.S:65
+#1  0x00007ffff7e2de95 in __vfprintf_internal (s=0x7ffff7f9e6a0 <_IO_2_1_stdout_>, format=0x555555556063 "%s", ap=ap@entry=0x7fffffffe4e0, mode_flags=mode_flags@entry=0) at vfprintf-internal.c:1688
+#2  0x00007ffff7e16ebf in __printf (format=<optimized out>) at printf.c:33
+#3  0x0000555555555865 in main () at good-life.c:143
+(gdb) backtrace
+#0  __strlen_avx2 () at ../sysdeps/x86_64/multiarch/strlen-avx2.S:65
+#1  0x00007ffff7e2de95 in __vfprintf_internal (s=0x7ffff7f9e6a0 <_IO_2_1_stdout_>, format=0x555555556063 "%s", ap=ap@entry=0x7fffffffe4e0, mode_flags=mode_flags@entry=0) at vfprintf-internal.c:1688
+#2  0x00007ffff7e16ebf in __printf (format=<optimized out>) at printf.c:33
+#3  0x0000555555555865 in main () at good-life.c:143
+(gdb) frame 3
+#3  0x0000555555555865 in main () at good-life.c:143
+143                   printf("%s", life[row][col]);
+(gdb) up
+Initial frame selected; you cannot go up.
+(gdb) down
+#2  0x00007ffff7e16ebf in __printf (format=<optimized out>) at printf.c:33
+33      printf.c: No such file or directory.
+(gdb) down
+#1  0x00007ffff7e2de95 in __vfprintf_internal (s=0x7ffff7f9e6a0 <_IO_2_1_stdout_>, format=0x555555556063 "%s", ap=ap@entry=0x7fffffffe4e0, mode_flags=mode_flags@entry=0) at vfprintf-internal.c:1688
+1688    vfprintf-internal.c: No such file or directory.
+(gdb) up
+#2  0x00007ffff7e16ebf in __printf (format=<optimized out>) at printf.c:33
+33      printf.c: No such file or directory.
+(gdb) up
+#3  0x0000555555555865 in main () at good-life.c:143
+143                   printf("%s", life[row][col]);
+(gdb) list
+138
+139           for(row = 0; row<20; row++)
+140           {
+141               for(col = 0; col<20; col++)
+142               {
+143                   printf("%s", life[row][col]);
+144               }
+145               puts(" ");
+146           }
+147
+(gdb) break
+Breakpoint 1 at 0x555555555865: file good-life.c, line 141.
+(gdb) info break
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000555555555865 good-life.c:141
+(gdb) break 143
+Breakpoint 2 at 0x555555555820: file good-life.c, line 143.
+(gdb) delete breakpoint 1
+(gdb) info break
+Num     Type           Disp Enb Address            What
+2       breakpoint     keep y   0x0000555555555820 in main at good-life.c:143

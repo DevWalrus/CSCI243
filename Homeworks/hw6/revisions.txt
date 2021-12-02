@@ -1,0 +1,29 @@
+commit 0dd5791382951709ae70404d4cb1a00f38aca77e
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 28 23:08:57 2021 -0400
+
+    Fixed the print function to use the one provided by the user
+
+commit dc31fd931194d67598322a5dde9d0b6127b55923
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 28 23:00:43 2021 -0400
+
+    Documented the helper functions used
+
+commit b82501bfb6550893131f46f94b9c30fb8c179925
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 28 22:43:50 2021 -0400
+
+    Added base heap based on the python file
+
+commit acb9d0ae2b240db1554d57b9850bbd7a52d43875
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Oct 20 11:55:55 2021 -0400
+
+    Created the _create and _destroy methods
+
+commit 3bef13945e67db11cb810d1abe3e9f1cd1dc96c2
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Sun Oct 17 14:13:53 2021 -0400
+
+    Initial Commit

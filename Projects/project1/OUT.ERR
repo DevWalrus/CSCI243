@@ -1,0 +1,4 @@
+error: 'abe' and 'honest' are already friends.
+error: handle 'functional' is already taken.  Try another handle.
+error: 'Haskell' is not a known handle
+error: 'abe' and 'Crocks' are not friends.

@@ -1,0 +1,72 @@
+commit 4692f2b8c1c856f3e164d616e52c9d8efd79640a
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Sep 15 20:40:33 2021 -0400
+
+    Fixed some spacing errors in the submission
+
+commit 722303494676330bdada8f6da66440290580efeb
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Sep 15 20:32:06 2021 -0400
+
+    Added Documentation to the methods and some information in the methods
+    to help with readabliity
+
+commit b42ca683d64978e75e494bce15df56a716955d7e
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Sep 15 20:10:27 2021 -0400
+
+    - Removed the 2 rules methods to a new applyRules method that does all of
+    the looping outside of the main method.
+
+commit 89d9f1ea5737a0173dcbddaad6b5a75f5a723d15
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Sep 15 19:37:38 2021 -0400
+
+    - Created a countNeighbors function
+    - Moved the looping of the rule checking out of the individual methods, reducing execution time
+    - Removed duplication of Gen 0
+    - Fixed the edge checking functionality to account for negitive values (checking the other side)
+    - Created a test case using a glider as defined in the Wiki
+
+commit 6ef37c65972a41b898285ae01aead4032b8ad968
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Sep 15 17:10:32 2021 -0400
+
+    Implemented death correctly
+
+commit 90545df6f2110bd1c17275128211694aa3b7adb2
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Sep 15 16:37:49 2021 -0400
+
+    Removed the doubling of Generation 0, and fixed a bug not allowing all of the
+    cells to be born correctly. It now creates exactly the number requested.
+
+commit 17667368c51cf99faed0111660dbfed3254b8131
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Sep 15 09:47:19 2021 -0400
+
+    1) Fixed many warnings and errors in the c file, they are all documented in good-life.c
+    2) Changed the output of the file to be a run of the program that only produces 100 generations
+        and then terminates
+
+commit 9a66d49aab5e5c89db622a3c8646753b4cecd8d1
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Sep 15 09:16:04 2021 -0400
+
+    fix 1: stopped junk characters from being output by changing the comparing of the index to the value to
+    an assignment of the value to the index
+
+commit 367beb2def60ec56a52ea04045d185bef724bb20
+Author: Clinten M Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Sep 15 08:59:22 2021 -0400
+
+    fix 1: stopped crashed caused by a segmentation fault when the printf function
+    would expect to see a string literal but instead got a char. The fix for this
+    was to remove the %s and replace it with a %c. not the printf is expecting a
+    char, which is what we provide.
+
+commit 125a8d5481c5457380552f32b7455222d4672797
+Author: Clinten M Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Sep 15 07:41:51 2021 -0400
+
+    Starter Code for the homework 3 submission

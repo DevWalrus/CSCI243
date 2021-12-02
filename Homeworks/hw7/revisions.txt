@@ -1,0 +1,29 @@
+commit 73894ce13a3b76f8584403ade6872856a0f755fd
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Nov 11 21:24:17 2021 -0500
+
+    Renamed the file and added documentation
+
+commit 2ff6d60a953f682c578aa67973e22ae78cfb8542
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Nov 11 21:08:15 2021 -0500
+
+    Added IPs
+
+commit c00067aef515c0e625972585ebe5c5db493a0859
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Nov 11 21:07:43 2021 -0500
+
+    Added everything but IP addresses
+
+commit 400d763208fa972d9182530a0f67404988ba511c
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Nov 11 13:49:13 2021 -0500
+
+    Added the ability to read in the version
+
+commit 98a3fb11e62571e7918970bf3b0213c6d41252e3
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Nov 4 17:25:55 2021 -0400
+
+    Created basic program that reads the file and ouputs packet count, doesn't take packet-length into account yet.

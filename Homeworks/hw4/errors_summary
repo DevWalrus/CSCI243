@@ -1,0 +1,960 @@
+==523957== Memcheck, a memory error detector
+==523957== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==523957== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==523957== Command: ./movietest
+==523957== Parent PID: 523552
+==523957== 
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109A44: movie_to_string (movie.c:141)
+==523957==    by 0x109329: main (movietest.c:43)
+==523957== 
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109AAF: movie_to_string (movie.c:152)
+==523957==    by 0x109329: main (movietest.c:43)
+==523957== 
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x1098D2: movie_play (movie.c:90)
+==523957==    by 0x109358: main (movietest.c:46)
+==523957== 
+==523957== Invalid read of size 8
+==523957==    at 0x1097CD: movie_delete (movie.c:56)
+==523957==    by 0x10941C: main (movietest.c:61)
+==523957==  Address 0x4a85580 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x10941C: main (movietest.c:61)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109711: movie_new (movie.c:38)
+==523957==    by 0x1092B9: main (movietest.c:34)
+==523957== 
+==523957== Invalid read of size 8
+==523957==    at 0x1097DA: movie_delete (movie.c:56)
+==523957==    by 0x10941C: main (movietest.c:61)
+==523957==  Address 0x4a85580 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x10941C: main (movietest.c:61)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109711: movie_new (movie.c:38)
+==523957==    by 0x1092B9: main (movietest.c:34)
+==523957== 
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109A44: movie_to_string (movie.c:141)
+==523957==    by 0x1094B4: main (movietest.c:70)
+==523957== 
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109AAF: movie_to_string (movie.c:152)
+==523957==    by 0x1094B4: main (movietest.c:70)
+==523957== 
+==523957== Invalid write of size 1
+==523957==    at 0x483F0AC: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10994D: movie_copy (movie.c:104)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid write of size 1
+==523957==    at 0x483F0BE: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10994D: movie_copy (movie.c:104)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957==  Address 0x4a85f40 is 7 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid write of size 1
+==523957==    at 0x483F0AC: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10997D: movie_copy (movie.c:107)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid write of size 1
+==523957==    at 0x483F0BE: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10997D: movie_copy (movie.c:107)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957==  Address 0x4a85f8d is 4 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109989: movie_copy (movie.c:109)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10985B: movie_get_title (movie.c:73)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x1094EC: main (movietest.c:74)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109882: movie_get_title (movie.c:74)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x1094EC: main (movietest.c:74)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109807: movie_get_director (movie.c:63)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x1094EC: main (movietest.c:74)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10982D: movie_get_director (movie.c:64)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x1094EC: main (movietest.c:74)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 8
+==523957==    at 0x1097CD: movie_delete (movie.c:56)
+==523957==    by 0x109514: main (movietest.c:76)
+==523957==  Address 0x4a85ca0 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x109514: main (movietest.c:76)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109711: movie_new (movie.c:38)
+==523957==    by 0x10948C: main (movietest.c:67)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10985B: movie_get_title (movie.c:73)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x109520: main (movietest.c:77)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109882: movie_get_title (movie.c:74)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x109520: main (movietest.c:77)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109807: movie_get_director (movie.c:63)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x109520: main (movietest.c:77)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10982D: movie_get_director (movie.c:64)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x109520: main (movietest.c:77)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10994D: movie_copy (movie.c:104)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid write of size 1
+==523957==    at 0x483F0AC: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10994D: movie_copy (movie.c:104)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957==  Address 0x4a86299 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== Invalid write of size 1
+==523957==    at 0x483F0BE: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10994D: movie_copy (movie.c:104)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957==  Address 0x4a862a0 is 7 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10997D: movie_copy (movie.c:107)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid write of size 1
+==523957==    at 0x483F0AC: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10997D: movie_copy (movie.c:107)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957==  Address 0x4a862e9 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== Invalid write of size 1
+==523957==    at 0x483F0BE: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10997D: movie_copy (movie.c:107)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957==  Address 0x4a862ed is 4 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483FEE8: strcmp (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1096BA: movie_equals (movie.c:23)
+==523957==    by 0x10955F: main (movietest.c:83)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483FEF0: strcmp (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1096BA: movie_equals (movie.c:23)
+==523957==    by 0x10955F: main (movietest.c:83)
+==523957==  Address 0x4a86299 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483FEE8: strcmp (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1096D9: movie_equals (movie.c:24)
+==523957==    by 0x10955F: main (movietest.c:83)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483FEF0: strcmp (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1096D9: movie_equals (movie.c:24)
+==523957==    by 0x10955F: main (movietest.c:83)
+==523957==  Address 0x4a862e9 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10985B: movie_get_title (movie.c:73)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x10956F: main (movietest.c:85)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109882: movie_get_title (movie.c:74)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x10956F: main (movietest.c:85)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109807: movie_get_director (movie.c:63)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x10956F: main (movietest.c:85)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10982D: movie_get_director (movie.c:64)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x10956F: main (movietest.c:85)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10985B: movie_get_title (movie.c:73)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x10957F: main (movietest.c:86)
+==523957==  Address 0x4a862e9 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109882: movie_get_title (movie.c:74)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x10957F: main (movietest.c:86)
+==523957==  Address 0x4a862e9 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109807: movie_get_director (movie.c:63)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x10957F: main (movietest.c:86)
+==523957==  Address 0x4a86299 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10982D: movie_get_director (movie.c:64)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x10957F: main (movietest.c:86)
+==523957==  Address 0x4a86299 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== Invalid read of size 8
+==523957==    at 0x1097CD: movie_delete (movie.c:56)
+==523957==    by 0x1095C5: main (movietest.c:95)
+==523957==  Address 0x4a86240 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x1095C5: main (movietest.c:95)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10991C: movie_copy (movie.c:101)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== Invalid read of size 8
+==523957==    at 0x1097CD: movie_delete (movie.c:56)
+==523957==    by 0x1095D1: main (movietest.c:96)
+==523957==  Address 0x4a85ee0 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x1095D1: main (movietest.c:96)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10991C: movie_copy (movie.c:101)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109A44: movie_to_string (movie.c:141)
+==523957==    by 0x1095F4: main (movietest.c:99)
+==523957== 
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109AAF: movie_to_string (movie.c:152)
+==523957==    by 0x1095F4: main (movietest.c:99)
+==523957== 
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x1098D2: movie_play (movie.c:90)
+==523957==    by 0x109638: main (movietest.c:102)
+==523957== 
+==523957== Invalid read of size 8
+==523957==    at 0x1097CD: movie_delete (movie.c:56)
+==523957==    by 0x109678: main (movietest.c:109)
+==523957==  Address 0x4a865a0 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x109678: main (movietest.c:109)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109711: movie_new (movie.c:38)
+==523957==    by 0x1095E4: main (movietest.c:98)
+==523957== 
+==523957== Invalid read of size 8
+==523957==    at 0x1097DA: movie_delete (movie.c:56)
+==523957==    by 0x109678: main (movietest.c:109)
+==523957==  Address 0x4a865a0 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x109678: main (movietest.c:109)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109711: movie_new (movie.c:38)
+==523957==    by 0x1095E4: main (movietest.c:98)
+==523957== 
+==523957== 
+==523957== HEAP SUMMARY:
+==523957==     in use at exit: 380 bytes in 7 blocks
+==523957==   total heap usage: 60 allocs, 53 frees, 2,282 bytes allocated
+==523957== 
+==523957== 45 bytes in 1 blocks are definitely lost in loss record 1 of 7
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109A7F: movie_to_string (movie.c:148)
+==523957==    by 0x1095F4: main (movietest.c:99)
+==523957== 
+==523957== 49 bytes in 1 blocks are definitely lost in loss record 2 of 7
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109A7F: movie_to_string (movie.c:148)
+==523957==    by 0x1094B4: main (movietest.c:70)
+==523957== 
+==523957== 49 bytes in 1 blocks are definitely lost in loss record 3 of 7
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109A7F: movie_to_string (movie.c:148)
+==523957==    by 0x1094EC: main (movietest.c:74)
+==523957== 
+==523957== 49 bytes in 1 blocks are definitely lost in loss record 4 of 7
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109A7F: movie_to_string (movie.c:148)
+==523957==    by 0x109520: main (movietest.c:77)
+==523957== 
+==523957== 49 bytes in 1 blocks are definitely lost in loss record 5 of 7
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109A7F: movie_to_string (movie.c:148)
+==523957==    by 0x10956F: main (movietest.c:85)
+==523957== 
+==523957== 64 bytes in 1 blocks are definitely lost in loss record 6 of 7
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109A7F: movie_to_string (movie.c:148)
+==523957==    by 0x109329: main (movietest.c:43)
+==523957== 
+==523957== 75 bytes in 1 blocks are definitely lost in loss record 7 of 7
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109A7F: movie_to_string (movie.c:148)
+==523957==    by 0x109364: main (movietest.c:47)
+==523957== 
+==523957== LEAK SUMMARY:
+==523957==    definitely lost: 380 bytes in 7 blocks
+==523957==    indirectly lost: 0 bytes in 0 blocks
+==523957==      possibly lost: 0 bytes in 0 blocks
+==523957==    still reachable: 0 bytes in 0 blocks
+==523957==         suppressed: 0 bytes in 0 blocks
+==523957== 
+==523957== Use --track-origins=yes to see where uninitialised values come from
+==523957== ERROR SUMMARY: 192 errors from 53 contexts (suppressed: 0 from 0)
+==523957== 
+==523957== 1 errors in context 1 of 53:
+==523957== Invalid read of size 8
+==523957==    at 0x1097DA: movie_delete (movie.c:56)
+==523957==    by 0x109678: main (movietest.c:109)
+==523957==  Address 0x4a865a0 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x109678: main (movietest.c:109)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109711: movie_new (movie.c:38)
+==523957==    by 0x1095E4: main (movietest.c:98)
+==523957== 
+==523957== 
+==523957== 1 errors in context 2 of 53:
+==523957== Invalid read of size 8
+==523957==    at 0x1097CD: movie_delete (movie.c:56)
+==523957==    by 0x109678: main (movietest.c:109)
+==523957==  Address 0x4a865a0 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x109678: main (movietest.c:109)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109711: movie_new (movie.c:38)
+==523957==    by 0x1095E4: main (movietest.c:98)
+==523957== 
+==523957== 
+==523957== 1 errors in context 3 of 53:
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x1098D2: movie_play (movie.c:90)
+==523957==    by 0x109638: main (movietest.c:102)
+==523957== 
+==523957== 
+==523957== 1 errors in context 4 of 53:
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109AAF: movie_to_string (movie.c:152)
+==523957==    by 0x1095F4: main (movietest.c:99)
+==523957== 
+==523957== 
+==523957== 1 errors in context 5 of 53:
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109A44: movie_to_string (movie.c:141)
+==523957==    by 0x1095F4: main (movietest.c:99)
+==523957== 
+==523957== 
+==523957== 1 errors in context 6 of 53:
+==523957== Invalid read of size 8
+==523957==    at 0x1097CD: movie_delete (movie.c:56)
+==523957==    by 0x1095D1: main (movietest.c:96)
+==523957==  Address 0x4a85ee0 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x1095D1: main (movietest.c:96)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10991C: movie_copy (movie.c:101)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 1 errors in context 7 of 53:
+==523957== Invalid read of size 8
+==523957==    at 0x1097CD: movie_delete (movie.c:56)
+==523957==    by 0x1095C5: main (movietest.c:95)
+==523957==  Address 0x4a86240 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x1095C5: main (movietest.c:95)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10991C: movie_copy (movie.c:101)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== 
+==523957== 1 errors in context 8 of 53:
+==523957== Invalid write of size 1
+==523957==    at 0x483F0BE: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10997D: movie_copy (movie.c:107)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957==  Address 0x4a862ed is 4 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== 
+==523957== 1 errors in context 9 of 53:
+==523957== Invalid write of size 1
+==523957==    at 0x483F0BE: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10994D: movie_copy (movie.c:104)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957==  Address 0x4a862a0 is 7 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== 
+==523957== 1 errors in context 10 of 53:
+==523957== Invalid read of size 8
+==523957==    at 0x1097CD: movie_delete (movie.c:56)
+==523957==    by 0x109514: main (movietest.c:76)
+==523957==  Address 0x4a85ca0 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x109514: main (movietest.c:76)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109711: movie_new (movie.c:38)
+==523957==    by 0x10948C: main (movietest.c:67)
+==523957== 
+==523957== 
+==523957== 1 errors in context 11 of 53:
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109989: movie_copy (movie.c:109)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 1 errors in context 12 of 53:
+==523957== Invalid write of size 1
+==523957==    at 0x483F0BE: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10997D: movie_copy (movie.c:107)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957==  Address 0x4a85f8d is 4 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 1 errors in context 13 of 53:
+==523957== Invalid write of size 1
+==523957==    at 0x483F0BE: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10994D: movie_copy (movie.c:104)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957==  Address 0x4a85f40 is 7 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 1 errors in context 14 of 53:
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109AAF: movie_to_string (movie.c:152)
+==523957==    by 0x1094B4: main (movietest.c:70)
+==523957== 
+==523957== 
+==523957== 1 errors in context 15 of 53:
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109A44: movie_to_string (movie.c:141)
+==523957==    by 0x1094B4: main (movietest.c:70)
+==523957== 
+==523957== 
+==523957== 1 errors in context 16 of 53:
+==523957== Invalid read of size 8
+==523957==    at 0x1097DA: movie_delete (movie.c:56)
+==523957==    by 0x10941C: main (movietest.c:61)
+==523957==  Address 0x4a85580 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x10941C: main (movietest.c:61)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109711: movie_new (movie.c:38)
+==523957==    by 0x1092B9: main (movietest.c:34)
+==523957== 
+==523957== 
+==523957== 1 errors in context 17 of 53:
+==523957== Invalid read of size 8
+==523957==    at 0x1097CD: movie_delete (movie.c:56)
+==523957==    by 0x10941C: main (movietest.c:61)
+==523957==  Address 0x4a85580 is 16 bytes inside a block of size 24 free'd
+==523957==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1097C8: movie_delete (movie.c:55)
+==523957==    by 0x10941C: main (movietest.c:61)
+==523957==  Block was alloc'd at
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109711: movie_new (movie.c:38)
+==523957==    by 0x1092B9: main (movietest.c:34)
+==523957== 
+==523957== 
+==523957== 1 errors in context 18 of 53:
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x1098D2: movie_play (movie.c:90)
+==523957==    by 0x109358: main (movietest.c:46)
+==523957== 
+==523957== 
+==523957== 1 errors in context 19 of 53:
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109AAF: movie_to_string (movie.c:152)
+==523957==    by 0x109329: main (movietest.c:43)
+==523957== 
+==523957== 
+==523957== 1 errors in context 20 of 53:
+==523957== Conditional jump or move depends on uninitialised value(s)
+==523957==    at 0x109A44: movie_to_string (movie.c:141)
+==523957==    by 0x109329: main (movietest.c:43)
+==523957== 
+==523957== 
+==523957== 4 errors in context 21 of 53:
+==523957== Invalid write of size 1
+==523957==    at 0x483F0AC: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10997D: movie_copy (movie.c:107)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957==  Address 0x4a862e9 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== 
+==523957== 4 errors in context 22 of 53:
+==523957== Invalid write of size 1
+==523957==    at 0x483F0AC: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10997D: movie_copy (movie.c:107)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 5 errors in context 23 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109882: movie_get_title (movie.c:74)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x10957F: main (movietest.c:86)
+==523957==  Address 0x4a862e9 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== 
+==523957== 5 errors in context 24 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10985B: movie_get_title (movie.c:73)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x10957F: main (movietest.c:86)
+==523957==  Address 0x4a862e9 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== 
+==523957== 5 errors in context 25 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109882: movie_get_title (movie.c:74)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x10956F: main (movietest.c:85)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 5 errors in context 26 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10985B: movie_get_title (movie.c:73)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x10956F: main (movietest.c:85)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 5 errors in context 27 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483FEF0: strcmp (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1096D9: movie_equals (movie.c:24)
+==523957==    by 0x10955F: main (movietest.c:83)
+==523957==  Address 0x4a862e9 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== 
+==523957== 5 errors in context 28 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483FEE8: strcmp (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1096D9: movie_equals (movie.c:24)
+==523957==    by 0x10955F: main (movietest.c:83)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 5 errors in context 29 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10997D: movie_copy (movie.c:107)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 5 errors in context 30 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109882: movie_get_title (movie.c:74)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x109520: main (movietest.c:77)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 5 errors in context 31 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10985B: movie_get_title (movie.c:73)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x109520: main (movietest.c:77)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 5 errors in context 32 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109882: movie_get_title (movie.c:74)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x1094EC: main (movietest.c:74)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 5 errors in context 33 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10985B: movie_get_title (movie.c:73)
+==523957==    by 0x109A02: movie_to_string (movie.c:134)
+==523957==    by 0x1094EC: main (movietest.c:74)
+==523957==  Address 0x4a85f89 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109957: movie_copy (movie.c:106)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 7 errors in context 34 of 53:
+==523957== Invalid write of size 1
+==523957==    at 0x483F0AC: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10994D: movie_copy (movie.c:104)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957==  Address 0x4a86299 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== 
+==523957== 7 errors in context 35 of 53:
+==523957== Invalid write of size 1
+==523957==    at 0x483F0AC: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10994D: movie_copy (movie.c:104)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 8 errors in context 36 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10982D: movie_get_director (movie.c:64)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x10957F: main (movietest.c:86)
+==523957==  Address 0x4a86299 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== 
+==523957== 8 errors in context 37 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109807: movie_get_director (movie.c:63)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x10957F: main (movietest.c:86)
+==523957==  Address 0x4a86299 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== 
+==523957== 8 errors in context 38 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10982D: movie_get_director (movie.c:64)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x10956F: main (movietest.c:85)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 8 errors in context 39 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109807: movie_get_director (movie.c:63)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x10956F: main (movietest.c:85)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 8 errors in context 40 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483FEF0: strcmp (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1096BA: movie_equals (movie.c:23)
+==523957==    by 0x10955F: main (movietest.c:83)
+==523957==  Address 0x4a86299 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957== 
+==523957== 
+==523957== 8 errors in context 41 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483FEE8: strcmp (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x1096BA: movie_equals (movie.c:23)
+==523957==    by 0x10955F: main (movietest.c:83)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 8 errors in context 42 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10994D: movie_copy (movie.c:104)
+==523957==    by 0x109548: main (movietest.c:82)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 8 errors in context 43 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10982D: movie_get_director (movie.c:64)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x109520: main (movietest.c:77)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 8 errors in context 44 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109807: movie_get_director (movie.c:63)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x109520: main (movietest.c:77)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 8 errors in context 45 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483F0B2: strcpy (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10982D: movie_get_director (movie.c:64)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x1094EC: main (movietest.c:74)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== 
+==523957== 8 errors in context 46 of 53:
+==523957== Invalid read of size 1
+==523957==    at 0x483EF54: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x109807: movie_get_director (movie.c:63)
+==523957==    by 0x109A12: movie_to_string (movie.c:135)
+==523957==    by 0x1094EC: main (movietest.c:74)
+==523957==  Address 0x4a85f39 is 0 bytes after a block of size 9 alloc'd
+==523957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==523957==    by 0x10992A: movie_copy (movie.c:103)
+==523957==    by 0x1094DC: main (movietest.c:73)
+==523957== 
+==523957== ERROR SUMMARY: 192 errors from 53 contexts (suppressed: 0 from 0)

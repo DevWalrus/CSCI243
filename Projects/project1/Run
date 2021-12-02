@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# Run the program by feeding the File-input2 file as input and
+# capturing standard output to the file out, and
+# capturing standard error to the file out.err.
+
+rm -f out out.err
+
+./amici <File-input2 2>out.err >out
+

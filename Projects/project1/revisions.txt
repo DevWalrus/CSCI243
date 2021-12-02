@@ -1,0 +1,103 @@
+commit 8be44aa7f573d4ea361a616c2032642384be9601
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 23:56:39 2021 -0400
+
+    Finished formatting documentation
+
+commit b11090873ce95fa0dbdcd7c72ef18d45c9f8e531
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 23:43:54 2021 -0400
+
+    Fixed an error where if you gave an extra space on the line, it would error out. Now it just removes that "argument" and runs as if you didnt put it there
+
+commit 9afa3519963e338def03df525f51e37f5d1c2167
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 20:55:09 2021 -0400
+
+    Revert "Fixed issue where adding friends in the wrong order would cause a seg fault"
+    
+    This reverts commit 1e80aed658c9e409fe1b740fa4cda4e5f41dd5fd.
+
+commit ee4f3074e4a4ab2c1adca74edb1c1450c908aa02
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 20:51:36 2021 -0400
+
+    merged and resolved the conflict in process.c
+
+commit 5e12e166b32b7b70725cc677481c8be04378fc42
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 20:32:53 2021 -0400
+
+    Accidentally saved the wrong file, reverting
+
+commit 1e80aed658c9e409fe1b740fa4cda4e5f41dd5fd
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 18:07:24 2021 -0400
+
+    Fixed issue where adding friends in the wrong order would cause a seg fault
+
+commit 847414152474eb91e9f1d1b5b6b3d69541b194a3
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 17:34:07 2021 -0400
+
+    Added bad input checking for first_name and last_name inputs
+
+commit 0a96ce718bf8e517ccc9f31c89997e81cd863bee
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 14:24:40 2021 -0400
+
+    Fixed all Valgrind errors
+
+commit 0bb4d2739aad6c71ffadf45e9637943245a82219
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 02:26:33 2021 -0400
+
+    Added the quit and init methods and documentation
+
+commit 515774bf4158626d05985a9a4756d34c78848b4e
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 01:35:22 2021 -0400
+
+    wrote size method
+
+commit 674f5ab8fed9e052f8302e09fbf5f695561b34ce
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 01:34:34 2021 -0400
+
+    wrote print method
+
+commit 97af77e9648d8161e8fe494dbc2668c2f8826a02
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 01:33:27 2021 -0400
+
+    wrote unfriend method
+
+commit 6567597b1d657c71d9b6869da78d9e3255f9aa5e
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 01:32:30 2021 -0400
+
+    wrote friend method
+
+commit 5f1a877fefe8328678679632d3b2b652599f2842
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 01:31:04 2021 -0400
+
+    Wrote add method
+
+commit dc4c701735153e6c28e72efd0472af627497dbd8
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Thu Oct 7 01:30:02 2021 -0400
+
+    Stubbed out process and errors modules to allow for better readiblity in the final product
+
+commit f9ee8089e4d51fcec9094250f85c476dacd25ea1
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Sun Oct 3 21:34:44 2021 -0400
+
+    Stubbed out the amici.c and person.c files
+
+commit 4c4c8d58cd4bd37ac23b0282b7c0931d731c5a4b
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Sun Oct 3 21:26:26 2021 -0400
+
+    Initial Commit

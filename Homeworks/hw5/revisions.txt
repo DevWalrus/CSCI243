@@ -1,0 +1,47 @@
+commit 75b9e62f798c26898250f7eae77c73b068798b5e
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Fri Oct 15 18:38:47 2021 -0400
+
+    Finished Documentation
+
+commit 02ec2d41fb922da1a2b986a2a9a15715e40ebe34
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Fri Oct 15 17:55:34 2021 -0400
+
+    Fixed the blank line being passed in as a 0
+
+commit 7656f7387dc3e7e6f7b610f65015852b9883e3e3
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Fri Oct 15 17:34:28 2021 -0400
+
+    Wrote process and hpcalc
+
+commit f379398cec1bd0e6c2c9be85569c6c29c0d51e5e
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Fri Oct 15 14:45:36 2021 -0400
+
+    Added the process methods
+
+commit b2f7f7eadec65406d43543dc71ae506c2c329dc3
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Fri Oct 15 14:38:11 2021 -0400
+
+    Wrote the stack method
+
+commit 31bd1462c7c788d08e6c3dacbd54a71d3b54c39f
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Fri Oct 15 13:19:22 2021 -0400
+
+    Stubbed out other files to use
+
+commit 3dc9fd9b2a81f113366225af9547fe2b84b583ef
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Wed Oct 13 16:09:11 2021 -0400
+
+    Stubbed out all of the basic methods
+
+commit 5ffa02be52ecd9920ac5df8f0bcc2fadc3706874
+Author: Clinten Hopkins <cmh3586@cs.rit.edu>
+Date:   Mon Oct 11 13:56:16 2021 -0400
+
+    Initial Commit
