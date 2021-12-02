@@ -1,0 +1,123 @@
+\hypertarget{warning_8c}{}\doxysection{warning.\+c File Reference}
+\label{warning_8c}\index{warning.c@{warning.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for warning.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{warning_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{warning_8c_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}}~0
+\begin{DoxyCompactList}\small\item\em size of the array \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{warning_8c_a37eb00a6ac1f6075eeb43a72e380107d}{compute}} (int century, int offset)
+\item 
+void \mbox{\hyperlink{warning_8c_ab07dd16a2f7b0a0ac2ce85c3eefae77d}{usage}} (char message\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{warning_8c_aa403820cedbbd88716982c4c709c4e7c}{main}} (int argc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{warning_8c_a70ed59adcb4159ac551058053e649640}\label{warning_8c_a70ed59adcb4159ac551058053e649640}} 
+\index{warning.c@{warning.c}!SIZE@{SIZE}}
+\index{SIZE@{SIZE}!warning.c@{warning.c}}
+\doxysubsubsection{\texorpdfstring{SIZE}{SIZE}}
+{\footnotesize\ttfamily \#define S\+I\+ZE~0}
+
+
+
+size of the array 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{warning_8c_a37eb00a6ac1f6075eeb43a72e380107d}\label{warning_8c_a37eb00a6ac1f6075eeb43a72e380107d}} 
+\index{warning.c@{warning.c}!compute@{compute}}
+\index{compute@{compute}!warning.c@{warning.c}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily int compute (\begin{DoxyParamCaption}\item[{int}]{century,  }\item[{int}]{offset }\end{DoxyParamCaption})}
+
+compute returns the year of a US presidential election in a weird way. A presidential election occurs every 4 years, e.\+g. 2000, 2004, 2008, ...
+
+First, compute calculates the year representing the millennium using the century parameter value. For the purpose of this program, the year representing the \textquotesingle{}start\textquotesingle{} millennial year is the \textquotesingle{}0th\textquotesingle{} year. For example, consider 1200 as the \textquotesingle{}start\textquotesingle{} of the 13th century (1200-\/1299).
+
+Second, compute adds the offset value to the millennial year.
+
+Third, compute calculates whether offset is evenly divisible by 4. Calculate the remainder of offset divided by 4 to decide what to do next.
+
+If the remainder is 0, then subtract 4 from the millennial year value.
+
+Otherwise, subtract the remainder from the millennial year.
+
+Finally the function returns the value of that election year.
+
+Examples\+: compute( 20, 0) returns 1900 + 0 -\/ 4 = 1896 compute( 20, 1) returns 1900 + 1 -\/ 1 = 1900 compute( 20, 2) returns 1900 + 2 -\/ 2 = 1900 compute( 20, 3) returns 1900 + 3 -\/ 3 = 1900 compute( 20, 4) returns 1900 + 4 -\/ 4 = 1900
+
+compute( 20, 8) returns 1900 + 8 -\/ 4 = 1904 compute( 20, 9) returns 1900 + 9 -\/ 1 = 1908
+
+
+\begin{DoxyParams}{Parameters}
+{\em century} & positive integer number of the current century AD \\
+\hline
+{\em offset} & positive integer number of years after \textquotesingle{}start\textquotesingle{} of a century \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a presidential election year 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+(century $>$= 18) 
+
+if (century == 18) then (offset $>$= 89) 
+
+if (century $>$ 18) then (0 $<$= offset $<$= 99) 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{warning_8c_aa403820cedbbd88716982c4c709c4e7c}\label{warning_8c_aa403820cedbbd88716982c4c709c4e7c}} 
+\index{warning.c@{warning.c}!main@{main}}
+\index{main@{main}!warning.c@{warning.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc }\end{DoxyParamCaption})}
+
+The program prints the year of the previous presidential election computed based on input of the century (AD) and the year offset from the start of the century. The main inputs are command line arguments.
+
+The main function converts the command line\textquotesingle{}s century number and year offset values to integers using the strtol library function that converts a C string to an integer value. Then it calls \mbox{\hyperlink{warning_8c_a37eb00a6ac1f6075eeb43a72e380107d}{compute()}} passing century number and year offset as arguments.
+
+A simple way to use the strtol function is like this\+: Given a C string variable, str, that contains numeric digits, this statement returns the integer numeric value in base 10\+:
+
+int value = strtol( str, N\+U\+L\+L, 10 );
+
+The century-\/number is argv\mbox{[}1\mbox{]}, and the year-\/offset is argv\mbox{[}2\mbox{]}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{warning_8c_a37eb00a6ac1f6075eeb43a72e380107d}{compute}} function \mbox{\hyperlink{questions1_8txt_aa74a853e8c42378138828fa35f2e2117}{that}} implements the algorithm.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & integer value 3 for the number of command line tokens \\
+\hline
+{\em argv} & array of C string references, the command line arguments, and the type of argv is written as char $\ast$ argv\mbox{[}\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 to tell the OS that the process ran successfully, OR return 1 to tell the OS that the result was out of range. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{warning_8c_ab07dd16a2f7b0a0ac2ce85c3eefae77d}\label{warning_8c_ab07dd16a2f7b0a0ac2ce85c3eefae77d}} 
+\index{warning.c@{warning.c}!usage@{usage}}
+\index{usage@{usage}!warning.c@{warning.c}}
+\doxysubsubsection{\texorpdfstring{usage()}{usage()}}
+{\footnotesize\ttfamily void usage (\begin{DoxyParamCaption}\item[{char}]{message\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+output a usage message to stderr, standard error. Use when the program has an incomplete command line. 
+\begin{DoxyParams}{Parameters}
+{\em message} & N\+U\+L-\/terminated C string to print \\
+\hline
+\end{DoxyParams}

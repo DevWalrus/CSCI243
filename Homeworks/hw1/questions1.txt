@@ -1,0 +1,172 @@
+Lab 1: System Intro
+Activity 1: questions1.txt, warning.c : 30 points total
+
+Name: <<< SOLUTION/GRADING-GUIDE Clinten Hopkins >>>
+
+questions1.txt: points are given below for each part of each question.
+
+
+1. When you first log in, what is the absolute path of your home directory?
+
+	Write the FULL and COMPLETE command AND the answer it would print.
+
+	:  2 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    pwd $HOME
+    /home/stu4/s14/cmh3586
+
+2. What command will display the contents of your current
+   working directory, so that it shows the difference between
+   files and directories?
+
+	Write the FULL and COMPLETE command that would do the job.
+
+	:  2 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    ls -F
+
+3. What command would you use to change your working directory from
+   your home directory to an existing subdirectory named Courses?
+
+	Write the FULL and COMPLETE command that would do the job.
+
+	:  2 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    cd $HOME/Courses
+
+4. Within the Courses subdirectory, what command would you use to
+   create the subdirectory csci243.
+
+	Write the FULL and COMPLETE command that would do the job.
+
+	:  2 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    mkdir csci243
+
+5. What compiler flag compiles C programs using the ISO C99 standard?
+
+	Write the exact syntax for the flag to answer this question.
+
+	:  2 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    -std=c99
+   
+6. Put these steps of the compilation process into their proper order from
+   first to last.
+
+    A. Link
+    B. Assemble
+    C. Preprocess
+    D. Compile
+    
+	:  3 points
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+    C > D > B > A
+
+7. When warning.c is compiled like this: gcc warning.c -o warning
+   there are warnings of possible problems, but these are actually errors.
+
+   This question has these parts:
+
+   - First, investigate warnings the compiler may produce and what they mean.
+   - Second, fix the code so it compiles without warnings and runs correctly
+   to produce the output specified in the code documentation.
+
+   6a.) First, investigate warnings the compiler may produce and what they mean.
+
+	DO NOT CHANGE THE CODE UNTIL AFTER COMPLETING ALL FOUR CASES.
+
+        For these separate cases of compilation:
+	1. compile with NO flags   : gcc warning.c -o warning
+	2. compile with -Wall      : gcc -Wall warning.c -o warning
+	3. compile with -Wextra    : gcc -Wextra warning.c -o warning
+	4. compile with -pedantic  : gcc -pedantic warning.c -o warning
+
+	Each flag produces one or more warnings and notes that may repeat.
+
+        Follow these steps:
+	- COUNT the warnings AND 'note:' items for each compilation case.
+	- EXPLAIN the meaning of EACH warning in your own words.
+	  If a different flag produces the same warning as another, 
+	  then copy your prior explanation from an earlier case.
+	- INVESTIGATE and plan how to fix things.  This may require research
+	  to learn about type declarations, initializations, etc.
+	  Research sources include https://en.cppreference.com/w/c/language
+	  and the GNU C reference manual.
+
+	DO NOT CHANGE THE CODE UNTIL AFTER COMPLETING ALL THE CASES.
+
+        The format of the answer has been started for you. 
+	Fill in __#__ with the count of warnings (not notes), and
+	add explanation lines below that.
+
+	:  7 points: Case 1 is 1 point.  Cases 2-4 are 2 points each.
+    <<< YOUR ANSWER BELOW HERE (and do not remove this line)
+
+# Answer:
+    1. Flag: None    : __2__ warning(s)
+	Warning Explanations:
+    Both: The first argument passed into compute is expected to be an integer, 
+    but the century variable is an integer array
+
+    2. Flag: -Wall   : __4__ warnings  // include repeats from other cases
+	Warning Explanations:
+	1) The main function should be written in a different way, the current
+    method only has 1 passed in variable, but main should either have 2 or 0
+    2 & 3) Both: The first argument passed into compute is expected to be an integer,
+    but the century variable is an integer array
+    4) The compute function could be written incorrectly, which could cause the variable
+    to be uninitilized
+
+
+    3. Flag: -Wextra : __3__ warnings  // include repeats from other cases
+	Warning Explanations:
+    1 & 2) Both: The first argument passed into compute is expected to be an integer,
+    but the century variable is an integer array
+    3) The compute function could be written incorrectly, which could cause the variable
+    to be uninitilized
+
+
+    4. Flag: -pedantic : __5__ warnings  // include repeats from other cases
+	Warning Explanations:
+    1) The main function should be written in a different way, the current
+    method only has 1 passed in variable, but main should either have 2 or 0
+    2) The ISO standard is to not allow arrays with a size of 0
+    3) Because the ISO standard does not allow empty objects as a general rule,
+    the empty initilizer brackets are also not allowed
+    4 & 5) Both: The first argument passed into compute is expected to be an integer,
+    but the century variable is an integer array
+
+
+   6b.) Fix warning.c so it compiles without warnings and runs correctly to
+	produce the output described in the code documentation.
+
+	:  10 points
+
+	Make the necessary repairs to remove warnings, and
+	rewrite the code to produce the correct results.
+
+	WAIT, THERE'S MORE! Check the returns...
+
+	You also must fix a runtime logic error that no warning flag catches.
+
+    YOUR ANSWER IS THE SUBMITTED CODE.
+# Answer:
+	The logic error is failing to return 0 to the OS upon success.
+
+    Grading:  10 points
+
+	Students were given Run-warning.sh to test their program.
+
+	Multiple changes are needed to the main and compute functions.
+	See warning_fixed.c file for repairs labelled 'fix:'.
+
+	If the %MSGS file has no warnings, code produces correct output,
+	main returns 0, and code has decent readability, award all points.
+
+	Limit point deductions to a maximum of 10 for this part.
+	Deduct 2 points for each warning compiler reports in %MSGS file.
+	Deduct up to 3 points if the compute function does not work correctly.
+	Deduct up to 3 points if the main does not work correctly.
+    
+

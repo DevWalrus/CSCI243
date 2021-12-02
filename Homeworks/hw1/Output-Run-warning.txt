@@ -1,0 +1,75 @@
+
+=========
+output of ./warning 18 98
+1796
+Return Code == 0
+
+=========
+output of ./warning 18 99
+1796
+Return Code == 0
+
+=========
+output of ./warning 19 0
+1796
+Return Code == 0
+
+=========
+output of ./warning 19 4
+1800
+Return Code == 0
+
+=========
+output of ./warning 19 7
+1804
+Return Code == 0
+
+=========
+output of ./warning 20 0
+1896
+Return Code == 0
+
+=========
+output of ./warning 20 1
+1900
+Return Code == 0
+
+=========
+output of ./warning 20 2
+1900
+Return Code == 0
+
+=========
+output of ./warning 20 3
+1900
+Return Code == 0
+
+=========
+output of ./warning 20 4
+1900
+Return Code == 0
+
+=========
+output of ./warning 20 8
+1904
+Return Code == 0
+
+=========
+output of ./warning 20 13
+1912
+Return Code == 0
+
+=========
+output of ./warning 20 16
+1912
+Return Code == 0
+
+=========
+output of ./warning 20 35
+1932
+Return Code == 0
+
+=========
+output of ./warning 20 57
+1956
+Return Code == 0
